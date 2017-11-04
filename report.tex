@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+\usepackage{geometry, amsmath, bm}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\newcommand{\evector}{\boldsymbol{e}}
+\newcommand{\evone}{\boldsymbol{e_1}}
+%Gummi|065|=)
+\title{\textbf{CS347m - Project Report}}
+\author{Kalpesh Krishna (140070017)\\ Kumar Ayush (140260016)}
+\date{}
+\begin{document}
+
+\maketitle
+\section{Abstract}
+We intend to investigate Linux kernel modules and device drivers and build and understand a few toy Linux kernel modules. To this end, we've built three device drivers. The first driver interfaces with keyboard LEDs and causes them to blink periodically. The second driver interfaces with the CPU bell and controls its frequency to produce a desired alarm sound (\texttt{\textbackslash a}). This is loosely based on \texttt{beep}. Finally, the third driver is a key-logger, which secretly reads keyboard input and stores it in an external file.
+\section{Kernel Modules}
+Kernel modules are code that can be loaded and unloaded into the kernel as required. They extend the functionality of the kernel and allow the kernel to interface with hardware (device drivers) without needing a system reboot. 
+
+\section{Keyboard LEDs}
+\section{CPU Bell}
+\section{Keylogger}
+\end{document}
