@@ -56,21 +56,21 @@ static void my_timer_func(unsigned long ptr)
 
 static int __init kbleds_init(void)
 {
-    //int i;
+    int i;
 
-    //printk(KERN_INFO "kbleds: loading\n");
-    //printk(KERN_INFO "kbleds: fgconsole is %x\n", fg_console);
-    //for (i = 0; i < MAX_NR_CONSOLES; i++) {
-    //    if (!vc_cons[i].d)
-    //        break;
-    //    printk(KERN_INFO "poet_atkm: console[%i/%i] #%i, tty %lx\n", i,
-    //            MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
-    //            (unsigned long)vc_cons[i].d->port.tty);
-    //}
-    //printk(KERN_INFO "kbleds: finished scanning consoles\n");
+    printk(KERN_INFO "kbleds: loading\n");
+    printk(KERN_INFO "kbleds: fgconsole is %x\n", fg_console);
+    for (i = 0; i < MAX_NR_CONSOLES; i++) {
+       if (!vc_cons[i].d)
+           break;
+       printk(KERN_INFO "poet_atkm: console[%i/%i] #%i, tty %lx\n", i,
+               MAX_NR_CONSOLES, vc_cons[i].d->vc_num,
+               (unsigned long)vc_cons[i].d->port.tty);
+    }
+    printk(KERN_INFO "kbleds: finished scanning consoles\n");
 
     my_driver = (vc_cons[fg_console].d->port.tty)->driver;
-    //printk(KERN_INFO "kbleds: tty driver magic %x\n", my_driver->magic);
+    printk(KERN_INFO "kbleds: tty driver magic %x\n", my_driver->magic);
 
     /*
      *   * Set up the LED blink timer the first time
